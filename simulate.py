@@ -33,11 +33,11 @@ def get_potential(sim, sim_obj):
       dist = np.sqrt(np.sum(np.square(x1[:dim] - x2[:dim])))
       #Prevent singularities:
       min_dist = 1e-2
-    #   bounded_dist = dist*(dist > min_dist) + min_dist*(dist <= min_dist)
+      #   bounded_dist = dist*(dist > min_dist) + min_dist*(dist <= min_dist)
       bounded_dist = dist + min_dist
 
 
-    #   test_dist(jax.device_get(np.sum(np.any(dist <= min_dist))))
+      #   test_dist(jax.device_get(np.sum(np.any(dist <= min_dist))))
 
       if sim == 'r2':
           return -x1[-1]*x2[-1]/bounded_dist
